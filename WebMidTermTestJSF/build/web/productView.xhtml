@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+       Welcome #{loginBean.person.name}
+        <h:form>
+            
+        
+        <h:dataTable value="#{productBean.findAll()}" border="2" var="products">
+            
+                 <f:facet name="header">Products</f:facet>
+                 <h:column ><f:facet name="header">Index</f:facet>#{products.id}</h:column>
+                 <h:column ><f:facet name="header">Name</f:facet>#{products.name}</h:column>
+                 <h:column ><f:facet name="header">Price</f:facet>#{products.price}</h:column>
+                 <h:column ><f:facet name="header">Description</f:facet>#{products.description}</h:column>
+                 
+                 <h:column><f:facet name="header">Edit</f:facet><h:commandLink  action="#{productBean.edit(products)}" value="edit"/></h:column>
+                 <h:column><f:facet name="header">Delete</f:facet><h:commandLink  action="#{productBean.delete(products)}" value="delete"/></h:column>
+            </h:dataTable>
+            
+            <h:commandButton action="login.jsf" value="logout"/>
+            </h:form>
+    </h:body>
+</html>
+

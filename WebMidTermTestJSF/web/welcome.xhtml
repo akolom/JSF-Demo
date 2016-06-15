@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            h3{
+                text-align: center;
+            }
+            #body{
+                
+                background-color: beige;
+            }
+            #footer{
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        
+        <div id="body">
+        <h3>This is the Midterm Programming Exam</h3><br/><br/>
+        
+        <p>To Start the web-application please click start.</p><br/>
+        
+        <p>The number of users currently logged in is: ${loggin}</p>
+        
+        <h:form>
+            
+      
+         
+            
+            <h:commandButton action="login.jsf" value="Start"></h:commandButton>
+                      
+        </h:form>
+        
+        <p id="footer">This web-application is part of CS525 @ 2016  </p>
+        </div>
+    </h:body>
+</html>
+

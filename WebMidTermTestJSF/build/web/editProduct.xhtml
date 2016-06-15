@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Welcome #{loginBean.person.name},<br/><br/>
+        
+        <p>Enter new product info.</p><br/><br/>
+        
+        <h:form>
+            Enter Id: <h:inputTextarea value="#{productBean.product.id}"/><br/><br/>
+         Enter Name:   <h:inputTextarea value="#{productBean.product.name}"/><br/><br/>
+         Enter Price  <h:inputTextarea value="#{productBean.product.price}"/><br/><br/>
+         Enter Description: <h:inputTextarea value="#{productBean.product.description}"/><br/><br/>
+         
+         <h:commandButton action="productView.jsf" value="Cancel"/>&nbsp;&nbsp;&nbsp;
+         <h:commandButton action="#{productBean.save()}" value="update"/>&nbsp;&nbsp;&nbsp;
+         
+        </h:form>
+    </h:body>
+</html>
+

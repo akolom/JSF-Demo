@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Welcome #{loginBean.person.name},<br/><br/>
+        
+        <p>Enter new product info.</p><br/><br/>
+        
+        <h:form>
+            Enter Id: <h:inputTextarea value="#{productBean.product.id}" /><br/><br/>
+            Enter Name:   <h:inputTextarea id="name" value="#{productBean.product.name}" validatorMessage="Product must have a name">
+            
+                <f:validateRequired/>
+            </h:inputTextarea>
+            <h:message for="name" style="color: red"/>
+            <br/><br/>
+            Enter Price  <h:inputTextarea id="price" value="#{productBean.product.price}" validatorMessage="Price must be between $-$850">
+             <f:validateLongRange minimum="1" maximum="850"/>
+            
+            </h:inputTextarea>
+            
+            <h:message for="price" style="color: red;"/>
+            <br/><br/>
+         Enter Description: <h:inputTextarea value="#{productBean.product.description}"/><br/><br/>
+         
+         <h:commandButton action="adminPage.jsf" value="Cancel"/>&nbsp;&nbsp;&nbsp;
+         <h:commandButton action="#{productBean.save()}" value="Add"/>&nbsp;&nbsp;&nbsp;
+         
+        </h:form>
+    </h:body>
+</html>
+
